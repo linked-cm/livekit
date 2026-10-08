@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { build } from 'esbuild';
 import { chromium } from 'playwright';
 import { RoomServiceClient } from 'livekit-server-sdk';
-import { LiveKitServerAdapter } from '../dist/server.js';
+import { LiveKitServerAdapter } from '../lib/esm/server.js';
 
 const apiUrl = process.env.LIVEKIT_API_URL ?? 'http://127.0.0.1:7880';
 const publicUrl = process.env.LIVEKIT_URL ?? 'ws://127.0.0.1:7880';

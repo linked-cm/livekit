@@ -1,57 +1,83 @@
 {
   "name": "@linked.cm/livekit",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "Self-hosted LiveKit adapter for @_linked/live-sessions",
   "linkedPackage": true,
   "type": "module",
+  "main": "lib/esm/index.js",
+  "module": "lib/esm/index.js",
+  "types": "lib/esm/index.d.ts",
   "license": "ISC",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/linked-cm/livekit.git"
   },
+  "homepage": "https://github.com/linked-cm/livekit#readme",
+  "bugs": {
+    "url": "https://github.com/linked-cm/livekit/issues"
+  },
   "files": [
-    "dist",
+    "lib",
     "README.md",
     "LICENSE"
   ],
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
-    },
-    "./server": {
-      "types": "./dist/server.d.ts",
-      "import": "./dist/server.js"
-    },
-    "./client": {
-      "types": "./dist/client.d.ts",
-      "import": "./dist/client.js"
-    },
-    "./package": {
-      "types": "./dist/package.d.ts",
-      "import": "./dist/package.js"
-    }
+  "sideEffects": [
+    "./src/package.ts",
+    "lib/esm/package.js"
+  ],
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "start": "npm exec linked dev",
+    "build": "npm exec linked build",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "test": "npm run build && node --test test/*.test.mjs",
-    "test:e2e": "npm run build && node test/integration.mjs",
-    "prepare": "npm run build"
+    "test": "node --test test/*.test.mjs",
+    "test:e2e": "npm run build && node test/integration.mjs"
+  },
+  "exports": {
+    ".": {
+      "types": "./lib/esm/index.d.ts",
+      "import": "./lib/esm/index.js"
+    },
+    "./server": {
+      "types": "./lib/esm/server.d.ts",
+      "import": "./lib/esm/server.js"
+    },
+    "./client": {
+      "types": "./lib/esm/client.d.ts",
+      "import": "./lib/esm/client.js"
+    },
+    "./package": {
+      "types": "./lib/esm/package.d.ts",
+      "import": "./lib/esm/package.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "lib/esm/*"
+      ]
+    }
   },
   "dependencies": {
     "@_linked/live-sessions": "git+https://github.com/linked-cm/live-sessions.git#c3be45a1e175c396e7ce0f4ae9eee167fc4ea78c",
-    "@_linked/core": "^2.22.2",
+    "@_linked/core": "^2.25.0",
     "@livekit/protocol": "1.51.0",
     "livekit-client": "2.22.3",
     "livekit-server-sdk": "2.19.1"
   },
   "devDependencies": {
-    "typescript": "5.9.2",
+    "@_linked/cli": "1.39.0",
+    "@types/node": "^20.12.7",
     "esbuild": "0.28.2",
-    "playwright": "1.61.0"
+    "playwright": "1.61.0",
+    "typescript": "5.9.2"
   },
-  "publishConfig": {
-    "access": "public"
-  }
+  "keywords": [
+    "linked",
+    "livekit",
+    "webrtc",
+    "live-sessions"
+  ]
 }

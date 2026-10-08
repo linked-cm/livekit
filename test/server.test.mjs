@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { TokenVerifier } from 'livekit-server-sdk';
-import { LiveKitServerAdapter } from '../dist/server.js';
+import { LiveKitServerAdapter } from '../lib/esm/server.js';
 
 const key = 'test-key';
 const secret = 'this-is-a-local-test-secret-with-enough-length';

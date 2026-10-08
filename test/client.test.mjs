@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { LiveKitClientSession } from '../dist/client.js';
+import { LiveKitClientSession } from '../lib/esm/client.js';
 
 test('applies subscriptions only to known publications', () => {
   const calls = [];
