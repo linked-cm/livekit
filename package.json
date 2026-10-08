@@ -1,6 +1,6 @@
 {
   "name": "@linked.cm/livekit",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Self-hosted LiveKit adapter for @linked.cm/live-sessions",
   "linkedPackage": true,
   "type": "module",
