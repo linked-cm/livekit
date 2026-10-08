@@ -1,3 +1,5 @@
+// Registers the package with @_linked/core whichever entry a consumer imports.
+import './package.js';
 import { TrackSource } from '@livekit/protocol';
 import { AccessToken, RoomServiceClient } from 'livekit-server-sdk';
 import { validateDecision, type AdmissionDecision, type MediaCredential, type MediaCredentialMinter, type MediaSource, type RevocationResult } from '@linked.cm/live-sessions';
