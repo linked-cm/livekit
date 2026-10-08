@@ -12,6 +12,8 @@ const adapter = new LiveKitServerAdapter({ publicUrl: 'ws://localhost:7880', api
 test('mints a short-lived room-only human grant with source and subscriber restrictions', async () => {
   const now = Date.now();
   const credential = await adapter.mint(decision, now);
+  // mint() clamps to its own Date.now(), which can run a few ms ahead of `now` on a slow runner.
+  const mintedBy = Date.now();
   const grant = await new TokenVerifier(key, secret).verify(credential.token);
   assert.equal(grant.video?.room, decision.mediaRoom);
   assert.equal(grant.video?.roomJoin, true);
@@ -19,7 +21,7 @@ test('mints a short-lived room-only human grant with source and subscriber restr
   assert.deepEqual(grant.video?.canPublishSources, ['microphone']);
   assert.equal(grant.video?.canSubscribe, false);
   assert.equal(grant.video?.canPublishData, false);
-  assert.ok(credential.expiresAtMs - now <= 60_000);
+  assert.ok(credential.expiresAtMs - mintedBy <= 60_000);
 });
 test('empty publisher sources cannot publish', async () => {
   const credential = await adapter.mint({ ...decision, allowedPublishSources: [] }, Date.now());
