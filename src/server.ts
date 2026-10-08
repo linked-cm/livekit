@@ -1,6 +1,6 @@
 import { TrackSource } from '@livekit/protocol';
 import { AccessToken, RoomServiceClient } from 'livekit-server-sdk';
-import { validateDecision, type AdmissionDecision, type MediaCredential, type MediaCredentialMinter, type MediaSource, type RevocationResult } from '@_linked/live-sessions';
+import { validateDecision, type AdmissionDecision, type MediaCredential, type MediaCredentialMinter, type MediaSource, type RevocationResult } from '@linked.cm/live-sessions';
 import { liveKitCapabilities } from './capabilities.js';
 
 export interface LiveKitServerConfig {

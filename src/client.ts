@@ -1,6 +1,6 @@
 import { Room, type RemoteTrackPublication } from 'livekit-client';
-import type { MediaCredential, SubscriptionIntent } from '@_linked/live-sessions';
-export type { SubscriptionIntent } from '@_linked/live-sessions';
+import type { MediaCredential, SubscriptionIntent } from '@linked.cm/live-sessions';
+export type { SubscriptionIntent } from '@linked.cm/live-sessions';
 
 export class LiveKitClientSession {
   readonly room: Room;

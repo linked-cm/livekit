@@ -1,7 +1,7 @@
 {
   "name": "@linked.cm/livekit",
   "version": "0.0.0",
-  "description": "Self-hosted LiveKit adapter for @_linked/live-sessions",
+  "description": "Self-hosted LiveKit adapter for @linked.cm/live-sessions",
   "linkedPackage": true,
   "type": "module",
   "main": "lib/esm/index.js",
@@ -61,7 +61,7 @@
     }
   },
   "dependencies": {
-    "@_linked/live-sessions": "git+https://github.com/linked-cm/live-sessions.git#c3be45a1e175c396e7ce0f4ae9eee167fc4ea78c",
+    "@linked.cm/live-sessions": "^0.1.0",
     "@_linked/core": "^2.25.0",
     "@livekit/protocol": "1.51.0",
     "livekit-client": "2.22.3",
