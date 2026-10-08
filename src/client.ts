@@ -1,3 +1,5 @@
+// Registers the package with @_linked/core whichever entry a consumer imports.
+import './package.js';
 import { Room, type RemoteTrackPublication } from 'livekit-client';
 import type { MediaCredential, SubscriptionIntent } from '@linked.cm/live-sessions';
 export type { SubscriptionIntent } from '@linked.cm/live-sessions';
