@@ -1,5 +1,5 @@
 {
-  "name": "@_linked/livekit",
+  "name": "@linked.cm/livekit",
   "version": "0.1.0",
   "description": "Self-hosted LiveKit adapter for @_linked/live-sessions",
   "linkedPackage": true,
@@ -7,7 +7,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/linked-fw/livekit.git"
+    "url": "git+https://github.com/linked-cm/livekit.git"
   },
   "files": [
     "dist",
@@ -40,7 +40,7 @@
     "prepare": "npm run build"
   },
   "dependencies": {
-    "@_linked/live-sessions": "git+https://github.com/linked-fw/live-sessions.git#c3be45a1e175c396e7ce0f4ae9eee167fc4ea78c",
+    "@_linked/live-sessions": "git+https://github.com/linked-cm/live-sessions.git#c3be45a1e175c396e7ce0f4ae9eee167fc4ea78c",
     "@_linked/core": "^2.22.2",
     "@livekit/protocol": "1.51.0",
     "livekit-client": "2.22.3",
