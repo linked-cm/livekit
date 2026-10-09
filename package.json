@@ -81,5 +81,6 @@
     "livekit",
     "webrtc",
     "live-sessions"
-  ]
+  ],
+  "packageManager": "npm@12.2.0"
 }
